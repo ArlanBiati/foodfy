@@ -1,0 +1,40 @@
+@media (max-width: 700px) {
+    header {
+        justify-content: space-between;
+    }
+
+    section.banner {
+        justify-content: center;
+        text-align: center;
+
+        height: 300px;
+    }
+
+    .img-banner img{
+        display: none;
+    }
+
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 530px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 380px) {
+    section.banner {
+        height: 250px;
+    }
+
+    .description-banner h1 {
+        font-size: 22px;
+    }
+
+    .description-banner p {
+        font-size: 14px;
+    }
+}
