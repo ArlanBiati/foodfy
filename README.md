@@ -1,14 +1,14 @@
 <p>&nbsp;&nbsp;</p>
 
-<center>
+<h1 align="center">
 	<img src="https://user-images.githubusercontent.com/43690080/88178844-646b2b00-cc01-11ea-9336-bb77d4dc6451.png" />
-</center>
+</h1>
 
 <p>&nbsp;&nbsp;</p>
 
-<center>
+<h1 align="center">
 	<img src="https://user-images.githubusercontent.com/43690080/88178852-66cd8500-cc01-11ea-85dc-2843c1844f32.png" />
-</center>
+</h1>
 
 <p>&nbsp;&nbsp;</p>
 
