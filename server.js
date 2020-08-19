@@ -1,8 +1,9 @@
 const express = require("express")
 const nunjucks = require("nunjucks")
 
-const server = express()
 const recipes = require("./data")
+
+const server = express()
 
 server.use(express.static("public"))
 
@@ -20,8 +21,11 @@ server.get("/", function(req, res) {
 server.get("/about", function(req, res) {
     return res.render("about")
 })
-server.get("/recipes", function(req, res) {
-    return res.render("recipes", { recipes })
+
+
+server.get("/recipe/:id", function(req, res) {
+
+    return res.render("recipe", { recipe: recipes.id })
 })
 
 server.listen(5000, function() {
