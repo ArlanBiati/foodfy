@@ -23,9 +23,16 @@ server.get("/about", function(req, res) {
 })
 
 
-server.get("/recipe/:id", function(req, res) {
+server.get("/recipes/:id", function(req, res) {
 
-    return res.render("recipe", { recipe: recipes.id })
+    const recipeId = req.params.id
+
+    const recipe = recipes.find(e => e.id == recipeId )
+
+    return res.render("recipe", { recipe })
+
+    //http://localhost:5000/recipes/Triplo bacon burger
+
 })
 
 server.listen(5000, function() {

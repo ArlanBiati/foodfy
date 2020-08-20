@@ -24,7 +24,7 @@
 
             {% for recipe in recipes %}
             <div class="recipe">
-                <img id="{{recipe.id}}" onClick="capturaId(this.id)" src="{{ recipe.image }}" alt="hamburguer">
+                <a href="/recipes/{{recipe.id}}"><img src="{{ recipe.image }}" alt="{{ recipe.title }}"></a>
                 <h2>{{ recipe.title }}</h2>
                 <h4>por {{ recipe.author }}</h4>
             </div>

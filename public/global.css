@@ -5,25 +5,28 @@
     font-family: 'Roboto', sans-serif;
 }
 
-html {
-    height: 100%;
+html, body {
+    height: 100%;    
 }
 
 body {
     background-color: rgb(255, 248, 248);
 }
 
+.tudo {
+    min-height: 100%;
+
+    position: relative;
+}
+
 .container {
     margin: 0 auto;
-    padding: 0 8%;
+    padding: 0px 8% 12%;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1200px; 
+ 
 }
 
 a {
     text-decoration: none;
-}
-
-li {
-    list-style: none;
 }

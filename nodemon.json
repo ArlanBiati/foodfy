@@ -1,3 +1,6 @@
 {
-    "ext": "js, njk, css"
+    "ext": "js, njk, css",
+    "execMap": {
+        "js": "node server.js"
+    }
 }

@@ -17,15 +17,27 @@
     .grid {
         grid-template-columns: 1fr 1fr;
     }
+
+    .banner-recipe img {
+        height: 200px;
+    }
 }
 
 @media (max-width: 530px) {
     .grid {
         grid-template-columns: 1fr;
     }
+
+    .recipe img {
+        height: 100px;
+    }
 }
 
 @media (max-width: 380px) {
+    div.nav  {
+        display: flex;
+    }    
+
     section.banner {
         height: 250px;
     }
@@ -36,5 +48,35 @@
 
     .description-banner p {
         font-size: 14px;
+    }
+
+    .banner-recipe h1 {
+        font-size: 25px;
+    }
+
+    .banner-recipe h3 {
+        font-size: 15px;
+    }
+
+    .ingredients-button,
+    .preparations-button,
+    .informations-button {
+        justify-content: space-between;
+    }
+
+    .ingredients-button h1,
+    .preparations-button h1,
+    .informations-button h1 {
+        font-size: 20px;
+    }
+
+    .ingredients-button h4,
+    .preparations-button h4,
+    .informations-button h4 {
+        font-size: 13px;
+    }
+
+    footer {
+        text-align: center;
     }
 }
