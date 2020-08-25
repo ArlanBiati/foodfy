@@ -1,0 +1,46 @@
+{% extends "page-admin/layout.njk" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/page-admin/edit.css">
+{% endblock head %}
+
+{% block title %}
+    <title>Editar - Admin Foodfy</title>
+{% endblock %}
+
+{% block content %}
+
+    <form action="">
+        <div class="header-form">
+            <h1>Editando receita</h1>
+            <div class="buttons">
+                <button type="submit" class="delete">Deletar</button>
+                <button type="submit" class="save">Salvar receita</button>
+            </div>
+        </div>
+
+        <div class="inputs">
+            <div class="input">
+                <label for="recipe_url">Imagem da receita</label>
+                <input type="url" name="recipe_url" id="">
+            </div>
+
+            <div class="input">
+                <label for="ingredients">Ingredientes</label>
+                <input type="text" name="ingredients" id="">
+                <a href="#">Adicionar novo ingrediente</a>
+            </div>
+
+            <div class="input">
+                <label for="preparation">Modo de preparo</label>
+                <input type="url" name="preparation" id="">
+                <a href="#">Adicionar novo passo</a>
+            </div>
+
+            <div class="input">
+                <label for="informations">Informações adicionais</label>
+                <textarea name="informations" id=""></textarea>
+            </div>
+        </div>
+    </form>
+{% endblock %}

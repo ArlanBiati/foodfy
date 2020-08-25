@@ -1,0 +1,61 @@
+{% extends "page-client/layout.njk" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/page-client/recipes.css">
+{% endblock head %}
+
+{% block title %}
+    <title>Receita - Foodfy</title>
+{% endblock %}
+
+{% block content%}
+    <section class="recipe" id="{{recipes.id}}">
+        <div class="banner-recipe">
+            <img src="{{recipe.image}}" alt="{{recipe.title}}">
+            <h1>{{recipe.title}}</h1>
+            <h3>por {{recipe.author}}</h3>
+        </div>
+
+        <div class="ingredients">
+            <div class="button ingredients-button">
+                <h1>Ingredientes</h1>
+                <h4>Esconder</h4>
+            </div>
+            <div class="showHide ingredients-contain">
+                <ul>
+                    {% for ingredient in recipe.ingredients %}
+                    <li>{{ingredient}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div class="preparations">
+            <div class="button preparations-button">
+                <h1>Modo de preparo</h1>
+                <h4>Esconder</h4>
+            </div>
+            <div class="showHide preparations-contain">
+                <ul>
+                    {% for preparation in recipe.preparations %}
+                    <li>{{preparation}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div class="informations">
+            <div class="button informations-button">
+                <h1>Informações adicionais</h1>
+                <h4>Esconder</h4>
+            </div>
+            <div class="showHide informations-contain">
+                <p>
+                    {{recipe.information}}
+                </p>
+            </div>
+        </div>
+
+
+    </section>
+{% endblock %}

@@ -1,0 +1,64 @@
+header {
+    background-color: #111111;
+}
+
+.recipes h1 {
+    font-weight: 700;
+    font-size: 24px;
+
+    color: #111111;
+
+    margin: 50px 0 30px 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+.recipe {
+    display: flex;
+}
+
+.recipe img {
+    width: 40%;
+    height: 80px;
+
+    border-radius: 9px;
+
+    margin-bottom: 20px;
+}
+
+.recipe div {
+    margin-left: 20px;
+}
+
+.recipe div h2 {
+    margin-bottom: 5px;
+
+    font-size: 18px;
+    font-weight: 400;
+
+    color: #111111;
+}
+
+.recipe div h4 {
+    margin-bottom: 10px;
+
+    font-size: 14px;
+    font-weight: 400;
+    
+    color: #777777;
+}
+
+.recipe div a {
+    font-size: 14px;
+    font-weight: 700;
+    
+    color: #6558C3;
+}
+
+
+
+    

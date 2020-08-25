@@ -1,11 +1,22 @@
-{% extends "layout.njk" %}
+{% extends "page-admin/layout.njk" %}
 
 {% block head %}
-    <title>Receita - Foodfy</title>
+    <link rel="stylesheet" href="/page-admin/detail.css">
+{% endblock head %}
+
+{% block title %}
+    <title>Detalhes - Admin Foodfy</title>
 {% endblock %}
 
-{% block content%}
-    <section class="recipe" id="{{recipes.id}}">
+{% block content %}
+
+    <section class="recipe" id="{{recipe.id}}">
+
+        <div class="edit">
+            <h1>Receita: {{ recipe.title }}</h1>
+            <a href="/admin/recipes/{{recipe.id}}/edit">Editar receita</a>
+        </div>
+
         <div class="banner-recipe">
             <img src="{{recipe.image}}" alt="{{recipe.title}}">
             <h1>{{recipe.title}}</h1>
@@ -13,11 +24,10 @@
         </div>
 
         <div class="ingredients">
-            <div class="button ingredients-button">
+            <div class="ingredients-button">
                 <h1>Ingredientes</h1>
-                <h4>Esconder</h4>
             </div>
-            <div class="showHide ingredients-contain">
+            <div class="ingredients-contain">
                 <ul>
                     {% for ingredient in recipe.ingredients %}
                     <li>{{ingredient}}</li>
@@ -27,11 +37,10 @@
         </div>
 
         <div class="preparations">
-            <div class="button preparations-button">
+            <div class="preparations-button">
                 <h1>Modo de preparo</h1>
-                <h4>Esconder</h4>
             </div>
-            <div class="showHide preparations-contain">
+            <div class="preparations-contain">
                 <ul>
                     {% for preparation in recipe.preparations %}
                     <li>{{preparation}}</li>
@@ -41,11 +50,10 @@
         </div>
 
         <div class="informations">
-            <div class="button informations-button">
+            <div class="informations-button">
                 <h1>Informações adicionais</h1>
-                <h4>Esconder</h4>
             </div>
-            <div class="showHide informations-contain">
+            <div class="informations-contain">
                 <p>
                     {{recipe.information}}
                 </p>

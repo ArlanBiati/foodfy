@@ -5,34 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/global.css">
+    {% block head %}
+
+    {% endblock %}
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/responsive.css">
 
-    {% block head %}
+    {% block title %}
 
     {% endblock %}
 </head>
 <body>
     <div class="tudo">
-        <div class="container">
 
-            <header>
-                <div class="logo"><a href="/"><img src="/assets/logo.png" alt="logo foodfy"></a></div>
-                <div class="nav">
-                    <a href="/about">Sobre</a>
-                    <a href="/recipes">Receitas</a>
-                </div>
-            </header>
+        <header>
+            <div class="container">
+                <div class="logo"><a href="/admin/recipes"><img src="/assets/logo-white.png" alt="logo foodfy"></a></div>
+            </div>
+            
+        </header>
+
+        <div class="container">
 
             {% block content %}
 
             {% endblock %}
         
         </div> 
-
-        <footer>
-            <p>Todos os direitos reservados, receitas Foodfy.</p>
-        </footer>
     </div>
 
     <script src="/scripts.js"></script>
