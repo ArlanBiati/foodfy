@@ -27,7 +27,7 @@ routes.get("/recipes/:id", function(req, res) {
 
 // routes.get("/admin/recipes", recipes.index); // Mostrar a lista de receitas
 routes.get("/admin/recipes", function(req, res) {
-    return res.render("page-admin/listagem", { recipes })
+    return res.render("page-admin/listing", { recipes })
 })
 
 
@@ -50,7 +50,7 @@ routes.get("/admin/recipes/:id/edit", function(req, res) {
 
 // routes.get("/admin/recipes/create", recipes.create); // Mostrar formulário de nova receita
 routes.get("/admin/recipes/create", function(req, res) {
-    return res.render("page-admin/create", { recipes })
+    return res.render("page-admin/create")
 })
 
 

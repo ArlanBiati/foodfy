@@ -2,13 +2,32 @@ header {
     background-color: #111111;
 }
 
-.recipes h1 {
+.header-recipes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 50px 0 30px 0;
+}
+
+.header-recipes h1 {
     font-weight: 700;
     font-size: 24px;
 
     color: #111111;
+}
 
-    margin: 50px 0 30px 0;
+.header-recipes a {
+    font-weight: 700;
+    font-size: 16px;
+
+    padding: 10px 25px;
+
+    background-color: #6558C3;
+
+    color: white;
+
+    border-radius: 8px;
 }
 
 .grid {

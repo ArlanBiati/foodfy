@@ -1,0 +1,80 @@
+header {
+    background-color: black;
+}
+form div.header-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 55px 0 30px 0;
+}
+
+form div.header-form h1 {
+    font-size: 24px;
+    font-weight: 700;
+
+    color: #111111;
+}
+
+form div.header-form .buttons button{
+    font-size: 16px;
+    font-weight: 700;
+
+    color: #FFFFFF;
+
+    padding: 10px 25px;
+
+    border: none;
+    border-radius: 8px;
+}
+
+form .buttons .save {
+    background-color: #6558C3;
+}
+
+form .input {
+    margin-bottom: 30px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+form .input label {
+    font-size: 16px;
+    font-weight: 700;
+
+    color: #111111;
+
+    margin-bottom: 10px;
+}
+
+form .input input {
+    padding: 10px;
+
+    border-radius: 8px;
+    border: 1px solid #DDDDDD;
+
+    background-color: #FFFFFF;
+}
+
+form .input a {
+    font-size: 16px;
+    font-weight: 700;
+
+    color: #6558C3;
+
+    margin-top: 15px;
+}
+
+
+form .input textarea {
+    background-color: #FFFFFF;
+
+    border: 1px solid #DDDDDD;
+    border-radius: 8px;
+    
+    padding: 10px;
+
+    resize: vertical;
+}
+

@@ -22,24 +22,24 @@
         <div class="inputs">
             <div class="input">
                 <label for="recipe_url">Imagem da receita</label>
-                <input type="url" name="recipe_url" id="">
+                <input type="url" name="recipe_url" value="" placeholder="http://...">
             </div>
 
             <div class="input">
                 <label for="ingredients">Ingredientes</label>
-                <input type="text" name="ingredients" id="">
-                <a href="#">Adicionar novo ingrediente</a>
+                <input type="text" name="ingredients[]" value="" placeholder="Ingredientes">
+                <a href="#">+ novo ingrediente</a> <!--alterar a tag A para button-->
             </div>
 
             <div class="input">
                 <label for="preparation">Modo de preparo</label>
-                <input type="url" name="preparation" id="">
-                <a href="#">Adicionar novo passo</a>
+                <input type="url" name="preparation[]" value="" placeholder="Modo de preparo">
+                <a href="#">+ novo passo</a> <!--alterar a tag A para button-->
             </div>
 
             <div class="input">
                 <label for="informations">Informações adicionais</label>
-                <textarea name="informations" id=""></textarea>
+                <textarea name="informations"></textarea>
             </div>
         </div>
     </form>

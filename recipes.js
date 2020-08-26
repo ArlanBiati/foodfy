@@ -2,11 +2,11 @@ const fs = require("fs")
 const data = require("./data.json")
 
 exports.index = function(req, res) {
-    return res.render("page-admin/listagem", { recipes })
+    return res.render("page-admin/listing", { recipes })
 }
 
 exports.create = function(req, res) {
-    return res.render("page-admin/create", { recipes })
+    return res.render("page-admin/create")    
 }
 
 exports.show = function(req, res) {
@@ -18,7 +18,7 @@ exports.show = function(req, res) {
 }
 
 exports.edit = function(req, res) {
-    return res.render("page-admin/edit", { recipes })
+    
 }
 
 exports.post = function(req, res) {
