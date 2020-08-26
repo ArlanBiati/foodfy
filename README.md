@@ -40,14 +40,12 @@
   
   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen"> 
 <p>
-
-<center>
-
-  [Projeto](#-projeto) |
-  [Tecnologias](#-tecnologias) |
-  [Iniciando o Projeto](#-como-iniciar-o-projeto)
-
-</center>
+	
+<p align="center">
+  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-como-iniciar-o-projeto">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+</p>
 
 <p>&nbsp;&nbsp;</p>
 
@@ -67,7 +65,7 @@ Implementação de página de cadastro / login futuramente.
 
 ---
 
-## :rocket: Tecnologias
+## 🚀 Tecnologias
 
 O projeto foi desenvolvido usando as seguintes tecnologias
 
