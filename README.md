@@ -79,7 +79,7 @@ O projeto foi desenvolvido usando as seguintes tecnologias
 
 ```zsh
   # Clonar o repositório
-  ❯ git clone https://github.com/ArlanBiati/nwl-starter
+  ❯ git clone https://github.com/ArlanBiati/foodfy
 
   # Entrar no diretório
   ❯ cd foodfy
