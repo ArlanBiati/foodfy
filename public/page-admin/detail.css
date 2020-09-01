@@ -1,99 +1,82 @@
 header {
-    background-color: black;
+  background-color: black;
 }
 
 .edit {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    margin: 55px 0 24px 0;
+  margin: 55px 0 24px 0;
 }
 
 .edit h1 {
-    font-size: 24px;
-    font-weight: 700;
+  font-size: 24px;
+  font-weight: 700;
 
-    color: #111111;
+  color: #111111;
 }
 
 .edit a {
-    font-weight: 700;
-    font-size: 16px;
+  font-weight: 700;
+  font-size: 16px;
 
-    color: #FFFFFF;  
-    background-color: #6558C3;
+  color: #ffffff;
+  background-color: #6558c3;
 
-    padding: 10px 25px;
+  padding: 10px 25px;
 
-    border-radius: 8px;
+  border-radius: 8px;
 }
 
 .banner-recipe {
-    text-align: center;
+  text-align: center;
 }
 
 .banner-recipe img {
-    width: 100%;
-    height: 260px;
+  width: 100%;
+  height: 260px;
 
-    border-radius: 8px;
+  border-radius: 8px;
 
-    margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 .banner-recipe h1 {
-    font-size: 36px;
-    color: #111111;
+  font-size: 36px;
+  color: #111111;
 
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 .banner-recipe h3 {
-    font-weight: 400;
-    font-size: 20px;
+  font-weight: 400;
+  font-size: 20px;
 
-    color: #777777;
+  color: #777777;
 
-    margin-bottom: 50px;
-}
-
-.ingredients-button,
-.preparations-button,
-.informations-button {
-    display: flex;
-    align-items: center;
-
-    cursor: pointer;
-
-    padding: 5px;
-}
-
-.ingredients-button h4,
-.preparations-button h4,
-.informations-button h4 {
-    margin-left: 10px;
+  margin-bottom: 50px;
 }
 
 .ingredients-contain,
 .preparations-contain,
 .informations-contain {
-    padding: 15px 0px;
+  padding: 15px 0px;
 }
 
 .ingredients-contain ul,
 .preparations-contain ul {
-    margin-left: 16px;
+  margin-left: 16px;
 }
 
 .ingredients-contain ul li,
 .preparations-contain ul li {
-    margin: 8px 0;
+  margin: 8px 0;
 }
 
 .ingredients-contain ul li,
 .preparations-contain ul li,
 .informations-contain p {
-    font-size: 18px;
-    line-height: 28px;
+  font-size: 18px;
+  line-height: 28px;
 }

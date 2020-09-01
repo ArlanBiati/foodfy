@@ -20,14 +20,15 @@
         <div class="grid">
 
             {% for recipe in recipes %}
-            <div class="recipe">
-                <img src="{{recipe.image}}" alt="{{recipe.title}}">
-                <div>
-                    <h2>{{recipe.title}}</h2>
-                    <h4>por {{recipe.author}}</h4>
-                    <a href="/admin/recipes/{{recipe.id}}">Visualizar</a>
+                <div class="recipe">
+                    <img src="{{recipe.image}}" alt="{{recipe.title}}">
+                    <div>
+                        <h2>{{recipe.title}}</h2>
+                        <h4>por
+                            {{recipe.author}}</h4>
+                        <a href="/admin/recipes/{{recipe.id}}">Visualizar</a>
+                    </div>
                 </div>
-            </div>
             {% endfor %}
 
         </div>

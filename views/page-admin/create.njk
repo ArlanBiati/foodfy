@@ -10,9 +10,9 @@
 
 {% block content %}
 
-    <form action="">
+    <form method="POST" action="/admin/recipes">
         <div class="header-form">
-            <h1>Editando receita</h1>
+            <h1>Criar receita</h1>
             <div class="buttons">
                 <button type="submit" class="save">Salvar receita</button>
             </div>
@@ -20,25 +20,32 @@
 
         <div class="inputs">
             <div class="input">
-                <label for="recipe_url">Imagem da receita</label>
-                <input type="url" name="recipe_url" value="" placeholder="http://...">
+                <label for="image">Imagem da receita</label>
+                <input type="url" name="image" value="" placeholder="http://...">
+            </div>
+
+            <div class="input">
+                <label for="title">Imagem da receita</label>
+                <input type="text" name="title" value="" placeholder="Nome da receita">
             </div>
 
             <div class="input">
                 <label for="ingredients">Ingredientes</label>
                 <input type="text" name="ingredients[]" value="" placeholder="Ingredientes">
-                <a href="#">+ novo ingrediente</a> <!--alterar a tag A para button-->
+                <a href="#">+ novo ingrediente</a>
+                <!--alterar a tag A para button-->
             </div>
 
             <div class="input">
-                <label for="preparation">Modo de preparo</label>
-                <input type="url" name="preparation[]" value="" placeholder="Modo de preparo">
-                <a href="#">+ novo passo</a> <!--alterar a tag A para button-->
+                <label for="preparations">Modo de preparo</label>
+                <input type="text" name="preparations[]" value="" placeholder="Modo de preparo">
+                <a href="#">+ novo passo</a>
+                <!--alterar a tag A para button-->
             </div>
 
             <div class="input">
-                <label for="informations">Informações adicionais</label>
-                <textarea name="informations"></textarea>
+                <label for="information">Informações adicionais</label>
+                <textarea name="information"></textarea>
             </div>
         </div>
     </form>
