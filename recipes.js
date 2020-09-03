@@ -6,6 +6,7 @@ exports.index = function (req, res) {
 }
 
 exports.create = function (req, res) {
+
   return res.render('page-admin/create', { recipes: data.recipes.values })
   // erro de direcionamento
 }
@@ -23,7 +24,18 @@ exports.show = function (req, res) {
   return res.render('page-admin/detail', { recipe: foundRecipe })
 }
 
-exports.edit = function (req, res) {}
+exports.edit = function (req, res) {
+  const { id } = req.params
+
+  const foundRecipe = data.recipes.find((recipe) => {
+    return recipe.id == id
+  })
+  if (!foundRecipe) {
+    return res.send('Receita não encontrada')
+  }
+
+  return res.render("page-admin/edit", { recipe: foundRecipe })
+}
 
 exports.post = function (req, res) {
   const keys = Object.keys(req.body)
@@ -55,6 +67,6 @@ exports.post = function (req, res) {
   })
 }
 
-exports.put = function (req, res) {}
+exports.put = function (req, res) { }
 
-exports.delete = function (req, res) {}
+exports.delete = function (req, res) { }

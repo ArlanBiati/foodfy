@@ -57,6 +57,8 @@ form .input label {
 }
 
 form .input input {
+    font-size: 15px;
+    
     padding: 10px;
 
     border-radius: 8px;
@@ -65,23 +67,37 @@ form .input input {
     background-color: #FFFFFF;
 }
 
-form .input a {
+form .input button {
     font-size: 16px;
     font-weight: 700;
 
+    background: none;
     color: #6558C3;
 
+    border: none;
+
+    width: 20%;
+
     margin-top: 15px;
+    
+    display: flex;
 }
 
 
 form .input textarea {
+    font-size: 15px;
+    line-height: 25px;
+
     background-color: #FFFFFF;
 
     border: 1px solid #DDDDDD;
     border-radius: 8px;
     
     padding: 10px;
+
+    height: 250px;
+
+    overflow: hidden;
 
     resize: vertical;
 }

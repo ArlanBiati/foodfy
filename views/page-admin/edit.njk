@@ -10,7 +10,7 @@
 
 {% block content %}
 
-    <form action="">
+    <form action="/admin/recipes" method="PUT">
         <div class="header-form">
             <h1>Editando receita</h1>
             <div class="buttons">
@@ -22,26 +22,26 @@
         <div class="inputs">
             <div class="input">
                 <label for="image">Imagem da receita</label>
-                <input type="url" name="image" value="" placeholder="http://...">
+                <input type="url" name="image" value="{{recipe.image}}" placeholder="http://...">
             </div>
 
             <div class="input">
                 <label for="ingredients">Ingredientes</label>
-                <input type="text" name="ingredients[]" value="" placeholder="Ingredientes">
-                <a href="#">+ novo ingrediente</a>
+                <input type="text" name="ingredients[]" value="{{recipe.ingredients}}" placeholder="Ingredientes">
+                <button>+ novo ingrediente</button>
                 <!--alterar a tag A para button-->
             </div>
 
             <div class="input">
                 <label for="preparations">Modo de preparo</label>
-                <input type="url" name="preparations[]" value="" placeholder="Modo de preparo">
-                <a href="#">+ novo passo</a>
+                <input type="text" name="preparations[]" value="{{recipe.preparations}}" placeholder="Modo de preparo">
+                <button>+ novo passo</button>
                 <!--alterar a tag A para button-->
             </div>
 
             <div class="input">
                 <label for="information">Informações adicionais</label>
-                <textarea name="information"></textarea>
+                <textarea name="information">{{recipe.information}}</textarea>
             </div>
         </div>
     </form>

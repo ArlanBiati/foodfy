@@ -26,12 +26,14 @@
         <h1>Mais acessadas</h1>
         <div class="grid">
 
-            {% for recipe in recipes %}
-            <div class="recipe">
-                <a href="/recipes/{{recipe.id}}"><img src="{{ recipe.image }}" alt="{{ recipe.title }}"></a>
-                <h2>{{ recipe.title }}</h2>
-                <h4>por {{ recipe.author }}</h4>
-            </div>
+            {% for recipe in recipesUser %}
+                <!--alterar para recipes depois de mudar a rota-->
+                <div class="recipe">
+                    <a href="/recipes/{{recipe.id}}"><img src="{{ recipe.image }}" alt="{{ recipe.title }}"></a>
+                    <h2>{{ recipe.title }}</h2>
+                    <h4>por
+                        {{ recipe.author }}</h4>
+                </div>
             {% endfor %}
 
         </div>
