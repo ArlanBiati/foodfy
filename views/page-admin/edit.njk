@@ -10,7 +10,7 @@
 
 {% block content %}
 
-    <form action="/admin/recipes" method="PUT">
+    <form action="/admin/recipes?_method=PUT" method="POST">
         <div class="header-form">
             <h1>Editando receita</h1>
             <div class="buttons">
@@ -44,5 +44,6 @@
                 <textarea name="information">{{recipe.information}}</textarea>
             </div>
         </div>
+        <input type="hidden" name="id" value="{{recipe.id}}">
     </form>
 {% endblock %}

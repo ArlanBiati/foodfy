@@ -26,6 +26,8 @@ form div.header-form .buttons button{
 
     border: none;
     border-radius: 8px;
+
+    cursor: pointer;
 }
 
 form div.header-form .buttons button + button {
@@ -81,6 +83,8 @@ form .input button {
     margin-top: 15px;
     
     display: flex;
+
+    cursor: pointer;
 }
 
 

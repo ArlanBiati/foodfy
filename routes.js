@@ -21,11 +21,12 @@ routes.get('/recipes/:id', function (req, res) {
 
 routes.get('/admin/recipes', recipes.index) // Mostrar a lista de receitas - Ok
 
+routes.get('/admin/recipes/create', recipes.create) // Mostrar formulário de nova receita - Ok
+
 routes.get('/admin/recipes/:id', recipes.show) // Exibir detalhes de uma receita - Ok
 
 routes.get('/admin/recipes/:id/edit', recipes.edit) // Mostrar formulário de edição de receita - Ok
 
-routes.get('/admin/recipes/create', recipes.create) // Mostrar formulário de nova receita
 
 routes.post('/admin/recipes', recipes.post) // Cadastrar nova receita - Ok
 

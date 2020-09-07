@@ -26,6 +26,8 @@ form div.header-form .buttons button{
 
     border: none;
     border-radius: 8px;
+
+    cursor: pointer;
 }
 
 form .buttons .save {
@@ -57,13 +59,18 @@ form .input input {
     background-color: #FFFFFF;
 }
 
-form .input a {
+form .input button {
     font-size: 16px;
     font-weight: 700;
 
+    background: none;
     color: #6558C3;
 
+    border: 0;
+
     margin-top: 15px;
+
+    display: flex;
 }
 
 
