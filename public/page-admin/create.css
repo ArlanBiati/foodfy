@@ -50,13 +50,28 @@ form .input label {
     margin-bottom: 10px;
 }
 
+form .input .add-ingredients label,
+form .input .add-preparations label {
+    margin: 0;
+}
+
 form .input input {
     padding: 10px;
+    margin-bottom: 10px;
 
     border-radius: 8px;
     border: 1px solid #DDDDDD;
 
     background-color: #FFFFFF;
+}
+
+.add-ingredients,
+.add-preparations {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 10px;
 }
 
 form .input button {
@@ -68,9 +83,18 @@ form .input button {
 
     border: 0;
 
-    margin-top: 15px;
+    cursor: pointer;
 
-    display: flex;
+    outline: none;
+
+    transition: all 400ms ease-in-out;
+}
+
+form .input button:focus-within{
+    padding: 10px;
+
+    border-radius: 20px 1px;
+    border-bottom: 1px solid #6558C3;
 }
 
 
