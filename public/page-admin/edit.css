@@ -1,6 +1,11 @@
 header {
     background-color: black;
 }
+
+form {
+    position: relative;
+}
+
 form div.header-form {
     display: flex;
     align-items: center;
@@ -16,7 +21,7 @@ form div.header-form h1 {
     color: #111111;
 }
 
-form div.header-form .buttons button{
+form .buttons button{
     font-size: 16px;
     font-weight: 700;
 
@@ -30,12 +35,18 @@ form div.header-form .buttons button{
     cursor: pointer;
 }
 
-form div.header-form .buttons button + button {
+form .buttons button + button {
     margin-left: 5px;
 }
 
 form .buttons .delete {
     background-color: #DC4747;
+
+    position: absolute;
+
+    right: 170px;
+    
+    z-index: 12;
 }
 
 form .buttons .save {

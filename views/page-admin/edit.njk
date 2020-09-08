@@ -10,11 +10,17 @@
 
 {% block content %}
 
+    <form action="/admin/recipes?_method=DELETE" method="POST">
+        <div class="buttons">
+            <button type="submit" class="delete">Deletar</button>
+        </div>
+        <input type="hidden" name="id" value="{{recipe.id}}">
+    </form>
+
     <form action="/admin/recipes?_method=PUT" method="POST">
         <div class="header-form">
             <h1>Editando receita</h1>
             <div class="buttons">
-                <button type="submit" class="delete">Deletar</button>
                 <button type="submit" class="save">Salvar receita</button>
             </div>
         </div>
@@ -46,4 +52,5 @@
         </div>
         <input type="hidden" name="id" value="{{recipe.id}}">
     </form>
+
 {% endblock %}

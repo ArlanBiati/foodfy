@@ -99,4 +99,20 @@ exports.put = function (req, res) {
   })
 }
 
-exports.delete = function (req, res) { }
+exports.delete = function (req, res) {
+  const { id } = req.body
+
+  const filteredRecipes = data.recipes.filter(function (recipe) {
+    return recipe.id != id
+  })
+
+  data.recipes = filteredRecipes
+
+  fs.writeFile("data.json", JSON.stringify(data, null, 2), function (err) {
+    if (err) {
+      return res.send("Write file error")
+    }
+
+    return res.redirect('/admin/recipes')
+  })
+}
