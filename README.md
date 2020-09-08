@@ -12,9 +12,14 @@
 
 <p>&nbsp;&nbsp;</p>
 
+<center> 
+	<img src="https://user-images.githubusercontent.com/43690080/92497587-e8886a80-f1cf-11ea-89a8-380ad51ca1c2.gif" />
+</center>
+
+<p>&nbsp;&nbsp;</p>
 
 <center> 
-	<img src="https://user-images.githubusercontent.com/43690080/88191169-87054000-cc11-11ea-9e59-fe9a80c0f3ba.gif" />
+	<img src="https://user-images.githubusercontent.com/43690080/92497572-e32b2000-f1cf-11ea-892a-9ccd061e7f58.gif" />
 </center>
 
 <p>&nbsp;&nbsp;</p>
