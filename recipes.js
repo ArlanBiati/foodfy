@@ -72,7 +72,13 @@ exports.edit = function (req, res) {
     return res.send('Receita não encontrada')
   }
 
-  return res.render("page-admin/edit", { recipe: foundRecipe })
+  const recipe = {
+    ...foundRecipe,
+    ingredients: foundRecipe.ingredients.toString().split(','),
+    preparations: foundRecipe.preparations.toString().split(',')
+  }
+
+  return res.render("page-admin/edit", { recipe })
 }
 
 exports.post = function (req, res) {
