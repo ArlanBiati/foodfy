@@ -26,8 +26,7 @@
         <h1>Mais acessadas</h1>
         <div class="grid">
 
-            {% for recipe in recipesUser %}
-                <!--alterar para recipes depois de mudar a rota-->
+            {% for recipe in recipes %}
                 <div class="recipe">
                     <a href="/recipes/{{recipe.id}}"><img src="{{ recipe.image }}" alt="{{ recipe.title }}"></a>
                     <h2>{{ recipe.title }}</h2>

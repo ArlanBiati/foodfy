@@ -1,23 +1,12 @@
 const express = require('express')
 const routes = express.Router()
 const recipes = require('./recipes')
-const recipesUser = require("./data")
 
-routes.get('/', function (req, res) {
-  return res.render('page-client/home', { recipesUser })
-})
+routes.get('/', recipes.home) // Mostrar home do usuario - Ok
 
-routes.get('/about', function (req, res) {
-  return res.render('page-client/about')
-})
+routes.get('/about', recipes.about) // Mostrar página de informações do site - Ok
 
-routes.get('/recipes/:id', function (req, res) {
-  const recipeId = req.params.id
-
-  const recipe = recipesUser.find((e) => e.id == recipeId)
-
-  return res.render('page-client/recipe', { recipe })
-})
+routes.get('/recipes/:id', recipes.recipes) // Exibir detalhes de uma receita - Ok
 
 routes.get('/admin/recipes', recipes.index) // Mostrar a lista de receitas - Ok
 
@@ -26,7 +15,6 @@ routes.get('/admin/recipes/create', recipes.create) // Mostrar formulário de no
 routes.get('/admin/recipes/:id', recipes.show) // Exibir detalhes de uma receita - Ok
 
 routes.get('/admin/recipes/:id/edit', recipes.edit) // Mostrar formulário de edição de receita - Ok
-
 
 routes.post('/admin/recipes', recipes.post) // Cadastrar nova receita - Ok
 
