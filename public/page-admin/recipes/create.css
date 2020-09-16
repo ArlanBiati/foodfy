@@ -2,6 +2,10 @@ header {
     background-color: black;
 }
 
+header .container {
+    justify-content: flex-start !important;
+}
+
 header .logo {
     margin-right: 5%;
 }

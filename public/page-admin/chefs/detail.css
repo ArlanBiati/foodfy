@@ -2,6 +2,10 @@ header {
   background-color: black;
 }
 
+header .container {
+  justify-content: flex-start !important;
+}
+
 header .logo {
   margin-right: 5%;
 }
@@ -70,27 +74,4 @@ header a + a {
   color: #777777;
 
   margin-bottom: 50px;
-}
-
-.ingredients-contain,
-.preparations-contain,
-.informations-contain {
-  padding: 15px 0px;
-}
-
-.ingredients-contain ul,
-.preparations-contain ul {
-  margin-left: 16px;
-}
-
-.ingredients-contain ul li,
-.preparations-contain ul li {
-  margin: 8px 0;
-}
-
-.ingredients-contain ul li,
-.preparations-contain ul li,
-.informations-contain p {
-  font-size: 18px;
-  line-height: 28px;
 }

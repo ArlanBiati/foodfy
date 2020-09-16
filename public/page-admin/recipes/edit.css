@@ -2,6 +2,10 @@ header {
     background-color: black;
 }
 
+header .container {
+    justify-content: flex-start !important;
+}
+
 header .logo {
     margin-right: 5%;
 }
@@ -99,6 +103,10 @@ form .input input {
     border: 1px solid #DDDDDD;
 
     background-color: #FFFFFF;
+}
+
+form .input input[type=text] {
+    color: black;
 }
 
 .add-ingredients,
