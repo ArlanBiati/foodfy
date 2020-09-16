@@ -1,7 +1,7 @@
 /* ========== banner ========= */
 
 section.banner {
-    background-color: rgba(255, 105, 180, 0.431);
+    background-color: #FBDFDB;
 
     display: flex;
     justify-content: space-between;
@@ -20,11 +20,6 @@ section.banner {
 .description-banner h1 {
     font-size: 32px;
     letter-spacing: 2px;
-
-    -webkit-text-stroke-width: 0.5px;
-    -webkit-text-stroke-color: rgb(0, 0, 0);
-
-    color: white;
 
     margin-bottom: 6%;
 }

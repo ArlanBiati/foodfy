@@ -1,13 +1,15 @@
 const express = require('express')
 const routes = express.Router()
+const users = require('./users')
 const recipes = require('./recipes')
 const chefs = require('./chefs')
 
 // USER
 
-routes.get('/', recipes.home) // Mostrar home do usuario - Ok
-routes.get('/about', recipes.about) // Mostrar página de informações do site - Ok
-routes.get('/recipes/:id', recipes.recipes) // Exibir detalhes de uma receita - Ok
+routes.get('/', users.home) // Mostrar home do usuario - Ok
+routes.get('/about', users.about) // Mostrar página de informações do site - Ok
+routes.get('/chefs', users.chefs) // Mostrar página de chefs - Ok
+routes.get('/recipes/:id', users.recipes) // Exibir detalhes de uma receita - Ok
 
 // ADMIM RECIPES
 

@@ -1,24 +1,49 @@
 header .container{
     display: flex;
     align-items: center;
+    justify-content: space-between;
 
     height: 100px;
 
     padding-bottom: 0;
 }
 
-.logo {
-    margin-right: 16%;
-}
-
 .nav a {
     color: black;
 }
 
-.nav a:nth-child(1) {
-    margin-right: 32px;
+.nav a:nth-child(2) {
+    margin: 0 32px;
 }
 
+div.search input {
+    padding: 10px;
+
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+
+    margin-right: 10px;
+}
+
+input[type=text] {
+    font-size: 14px;
+    
+    color: #999999;
+}
+
+div.search button {
+    padding: 10px 20px;
+
+    border: none;
+
+    background-color: #6558C3;
+    border-radius: 4px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    color: white;
+}
 
 /* ============== footer ============= */
 
@@ -27,11 +52,11 @@ footer {
     justify-content: center;
     align-items: center;
 
-    background-color: rgba(255, 105, 180, 0.431);
+    background-color: #EEEEEE;
 
     height: 65px;
 
-    color: white;
+    color: #999999;
 
     position: absolute;
     bottom: 0;

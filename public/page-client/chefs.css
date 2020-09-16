@@ -1,0 +1,43 @@
+section {
+  margin-top: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.chef {
+  display: flex;
+  align-items: center;
+}
+
+.chef img {
+  width: 15%;
+
+  border-radius: 50%;
+}
+
+.chef div {
+  margin-left: 20px;
+}
+
+.chef div h2 {
+  margin-bottom: 10px;
+
+  font-size: 18px;
+  font-weight: 400;
+
+  color: #111111;
+}
+
+.chef div h3 {
+  font-size: 14px;
+  font-weight: 400;
+
+  color: #666666;
+}
+
+
+
+  

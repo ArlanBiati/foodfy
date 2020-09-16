@@ -1,47 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/global.css">
-    {% block head %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/global.css">
+        {% block head %}{% endblock %}
+        <link rel="stylesheet" href="/style.css">
+        <link rel="stylesheet" href="/responsive.css">
 
-    {% endblock %}
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/responsive.css">
+        {% block title %}{% endblock %}
+    </head>
+    <body>
+        <div class="tudo">
 
-    {% block title %}
+            <header>
+                <div class="container">
+                    <div class="logo">
+                        <a href="/"><img src="/assets/logo.png" alt="logo foodfy"></a>
+                    </div>
+                    <div class="nav">
+                        <a href="/about">Sobre</a>
+                        <a href="/recipes">Receitas</a>
+                        <a href="/chefs">Chefs</a>
+                    </div>
 
-    {% endblock %}
-</head>
-<body>
-    <div class="tudo">
-
-        <header>
-            <div class="container">
-                <div class="logo"><a href="/"><img src="/assets/logo.png" alt="logo foodfy"></a></div>
-                <div class="nav">
-                    <a href="/about">Sobre</a>
-                    <a href="/recipes">Receitas</a>
+                    <div class="search">
+                        <input type="text" placeholder="Buscar uma receita">
+                        <button>Buscar</button>
+                    </div>
                 </div>
+
+            </header>
+
+            <div class="container">
+
+                {% block content %}{% endblock %}
+
             </div>
-            
-        </header>
 
-        <div class="container">
+            <footer>
+                <p>Todos os direitos reservados, receitas Foodfy.</p>
+            </footer>
+        </div>
 
-            {% block content %}
-
-            {% endblock %}
-        
-        </div> 
-
-        <footer>
-            <p>Todos os direitos reservados, receitas Foodfy.</p>
-        </footer>
-    </div>
-
-    <script src="/scripts.js"></script>
-</body>
+        <script src="/scripts.js"></script>
+    </body>
 </html>
