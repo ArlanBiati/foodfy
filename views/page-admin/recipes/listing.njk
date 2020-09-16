@@ -1,0 +1,36 @@
+{% extends "page-admin/layout.njk" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/page-admin/listing.css">
+{% endblock head %}
+
+{% block title %}
+    <title>Listagem - Admin Foodfy</title>
+{% endblock %}
+
+{% block content %}
+
+    <section class="recipes">
+
+        <div class="header-recipes">
+            <h1>Gerenciar receitas</h1>
+            <a href="/admin/recipes/create">+ Nova receita</a>
+        </div>
+
+        <div class="grid">
+
+            {% for recipe in recipes %}
+                <div class="recipe">
+                    <img src="{{recipe.image}}" alt="{{recipe.title}}">
+                    <div>
+                        <h2>{{recipe.title}}</h2>
+                        <h4>por
+                            {{recipe.author}}</h4>
+                        <a href="/admin/recipes/{{recipe.id}}">Visualizar</a>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+    </section>
+{% endblock %}

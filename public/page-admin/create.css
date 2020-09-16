@@ -1,6 +1,22 @@
 header {
     background-color: black;
 }
+
+header .logo {
+    margin-right: 5%;
+}
+
+header a {
+    font-weight: bold;
+    font-size: 15px;
+
+    color: #999999;
+}
+
+header a + a {
+    margin-left: 5%;
+}
+
 form div.header-form {
     display: flex;
     align-items: center;

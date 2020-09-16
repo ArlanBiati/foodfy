@@ -2,6 +2,21 @@ header {
     background-color: #111111;
 }
 
+header .logo {
+    margin-right: 5%;
+}
+
+header a {
+    font-weight: bold;
+    font-size: 15px;
+
+    color: #999999;
+}
+
+header a + a {
+    margin-left: 5%;
+}
+
 .header-recipes {
     display: flex;
     justify-content: space-between;

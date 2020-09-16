@@ -36,11 +36,11 @@ exports.recipes = function (req, res) {
 // Rotas Administrativas
 
 exports.index = function (req, res) {
-  return res.render('page-admin/listing', { recipes: data.recipes })
+  return res.render('page-admin/recipes/listing', { recipes: data.recipes })
 }
 
 exports.create = function (req, res) {
-  return res.render('page-admin/create', { recipes: data.recipes.values })
+  return res.render('page-admin/recipes/create', { recipes: data.recipes.values })
 }
 
 exports.show = function (req, res) {
@@ -59,7 +59,7 @@ exports.show = function (req, res) {
     preparations: foundRecipe.preparations.toString().split(',')
   }
 
-  return res.render('page-admin/detail', { recipe })
+  return res.render('page-admin/recipes/detail', { recipe })
 }
 
 exports.edit = function (req, res) {
@@ -78,7 +78,7 @@ exports.edit = function (req, res) {
     preparations: foundRecipe.preparations.toString().split(',')
   }
 
-  return res.render("page-admin/edit", { recipe })
+  return res.render("page-admin/recipes/edit", { recipe })
 }
 
 exports.post = function (req, res) {

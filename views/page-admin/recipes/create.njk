@@ -1,0 +1,54 @@
+{% extends "page-admin/layout.njk" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/page-admin/create.css">
+{% endblock head %}
+
+{% block title %}
+    <title>Criar - Admin Foodfy</title>
+{% endblock %}
+
+{% block content %}
+
+    <form method="POST" action="/admin/recipes">
+        <div class="header-form">
+            <h1>Criar receita</h1>
+            <div class="buttons">
+                <button type="submit" class="save">Salvar receita</button>
+            </div>
+        </div>
+
+        <div class="inputs">
+            <div class="input">
+                <label for="image">Imagem da receita</label>
+                <input type="url" name="image" value="{{ recipe.image }}" placeholder="http://...">
+            </div>
+
+            <div class="input">
+                <label for="title">Titulo da receita</label>
+                <input type="text" name="title" value="{{ recipe.title }}" placeholder="Nome da receita">
+            </div>
+
+            <div class="input ingredient">
+                <div class="add-ingredients">
+                    <label for="ingredients">Ingredientes</label>
+                    <button type="button" id="add-ingredient">+ novo ingrediente</button>
+                </div>
+                <input type="text" name="ingredients[]" value="{{ ingredient }}" id="ingredient" placeholder="Ingredientes">
+            </div>
+
+            <div class="input preparation">
+                <div class="add-preparations">
+                    <label for="preparations">Modo de preparo</label>
+                    <button type="button" id="add-preparation">+ novo passo</button>
+                </div>
+                <input type="text" name="preparations[]" value="{{ preparation }}" id="preparation" placeholder="Modo de preparo">
+            </div>
+
+            <div class="input">
+                <label for="information">Informações adicionais</label>
+                <textarea name="information">{{ recipe.information }}</textarea>
+            </div>
+        </div>
+    </form>
+{% endblock %}
