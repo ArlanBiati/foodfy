@@ -1,7 +1,7 @@
 {% extends "page-admin/layout.njk" %}
 
 {% block head %}
-    <link rel="stylesheet" href="/page-admin/edit.css">
+    <link rel="stylesheet" href="/page-admin/chefs/edit.css">
 {% endblock head %}
 
 {% block title %}
@@ -10,58 +10,33 @@
 
 {% block content %}
 
-    <form action="/admin/recipes?_method=DELETE" method="POST">
+    <form action="/admin/chefs?_method=DELETE" method="POST">
         <div class="buttons">
             <button type="submit" class="delete">Deletar</button>
         </div>
-        <input type="hidden" name="id" value="{{recipe.id}}">
+        <input type="hidden" name="id" value="{{chef.id}}">
     </form>
 
-    <form action="/admin/recipes?_method=PUT" method="POST">
+    <form action="/admin/chefs?_method=PUT" method="POST">
         <div class="header-form">
-            <h1>Editando receita</h1>
+            <h1>Editando chef</h1>
             <div class="buttons">
-                <button type="submit" class="save">Salvar receita</button>
+                <button type="submit" class="save">Salvar chef</button>
             </div>
         </div>
 
         <div class="inputs">
             <div class="input">
-                <label for="image">Imagem da receita</label>
-                <input type="url" name="image" value="{{ recipe.image }}" placeholder="http://...">
+                <label for="name">Nome</label>
+                <input type="text" name="name" value="{{ chef.name }}" placeholder="Nome do chef">
             </div>
 
             <div class="input">
-                <label for="title">Titulo da receita</label>
-                <input type="text" name="title" value="{{ recipe.title }}" placeholder="Nome da receita">
-            </div>
-
-            <div class="input ingredient">
-                <div class="add-ingredients">
-                    <label for="ingredients">Ingredientes</label>
-                    <button type="button" id="add-ingredient">+ novo ingrediente</button>
-                </div>
-                {% for ingredient in recipe.ingredients %}
-                    <input type="text" name="ingredients[]" value="{{ ingredient }}" id="ingredient" placeholder="Ingredientes">
-                {% endfor %}
-            </div>
-
-            <div class="input preparation">
-                <div class="add-preparations">
-                    <label for="preparations">Modo de preparo</label>
-                    <button type="button" id="add-preparation">+ novo passo</button>
-                </div>
-                {% for preparation in recipe.preparations %}
-                    <input type="text" name="preparations[]" value="{{ preparation }}" id="preparation" placeholder="Modo de preparo">
-                {% endfor %}
-            </div>
-
-            <div class="input">
-                <label for="information">Informações adicionais</label>
-                <textarea name="information">{{ recipe.information }}</textarea>
+                <label for="avatar_url">Avatar</label>
+                <input type="url" name="avatar_url" value="{{ chef.avatar_url }}" placeholder="http://...">
             </div>
         </div>
-        <input type="hidden" name="id" value="{{recipe.id}}">
+        <input type="hidden" name="id" value="{{chef.id}}">
     </form>
 
 {% endblock %}

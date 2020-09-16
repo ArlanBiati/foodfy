@@ -22,9 +22,7 @@ exports.show = function (req, res) {
   }
 
   const chef = {
-    ...foundChef,
-    ingredients: foundChef.ingredients.toString().split(','),
-    preparations: foundChef.preparations.toString().split(',')
+    ...foundChef
   }
 
   return res.render('page-admin/chefs/detail', { chef })
@@ -41,9 +39,7 @@ exports.edit = function (req, res) {
   }
 
   const chef = {
-    ...foundChef,
-    ingredients: foundChef.ingredients.toString().split(','),
-    preparations: foundChef.preparations.toString().split(',')
+    ...foundChef
   }
 
   return res.render("page-admin/chefs/edit", { chef })
@@ -58,17 +54,14 @@ exports.post = function (req, res) {
     }
   }
 
-  let { image, title, ingredients, preparations, information } = req.body
+  let { name, avatar_url } = req.body
 
   const id = Number(data.chefs.length + 1)
 
   data.chefs.push({
     id,
-    image,
-    title,
-    ingredients,
-    preparations,
-    information,
+    name,
+    avatar_url
   })
 
   fs.writeFile('data.json', JSON.stringify(data, null, 2), function (err) {

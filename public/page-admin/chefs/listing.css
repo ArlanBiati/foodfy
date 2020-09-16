@@ -1,0 +1,87 @@
+header {
+    background-color: #111111;
+}
+
+header .logo {
+    margin-right: 5%;
+}
+
+header a {
+    font-weight: bold;
+    font-size: 15px;
+
+    color: #999999;
+}
+
+header a + a {
+    margin-left: 5%;
+}
+
+.header-chefs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 50px 0 30px 0;
+}
+
+.header-chefs h1 {
+    font-weight: 700;
+    font-size: 24px;
+
+    color: #111111;
+}
+
+.header-chefs a {
+    font-weight: 700;
+    font-size: 16px;
+
+    padding: 10px 25px;
+
+    background-color: #6558C3;
+
+    color: white;
+
+    border-radius: 8px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+.chef {
+    display: flex;
+    align-items: center;
+}
+
+.chef img {
+    width: 15%;
+
+    border-radius: 50%;
+}
+
+.chef div {
+    margin-left: 20px;
+}
+
+.chef div h2 {
+    margin-bottom: 10px;
+
+    font-size: 18px;
+    font-weight: 400;
+
+    color: #111111;
+}
+
+.chef div a {
+    font-size: 14px;
+    font-weight: 700;
+    
+    color: #6558C3;
+}
+
+
+
+    

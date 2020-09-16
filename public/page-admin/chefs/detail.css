@@ -1,0 +1,96 @@
+header {
+  background-color: black;
+}
+
+header .logo {
+  margin-right: 5%;
+}
+
+header a {
+  font-weight: bold;
+  font-size: 15px;
+
+  color: #999999;
+}
+
+header a + a {
+  margin-left: 5%;
+}
+
+.edit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 55px 0 24px 0;
+}
+
+.edit h1 {
+  font-size: 24px;
+  font-weight: 700;
+
+  color: #111111;
+}
+
+.edit a {
+  font-weight: 700;
+  font-size: 16px;
+
+  color: #ffffff;
+  background-color: #6558c3;
+
+  padding: 10px 25px;
+
+  border-radius: 8px;
+}
+
+.banner-chef {
+  text-align: center;
+}
+
+.banner-chef img {
+  width: 30%;
+
+  border-radius: 50%;
+
+  margin-bottom: 50px;
+}
+
+.banner-chef h1 {
+  font-size: 36px;
+  color: #111111;
+
+  margin-bottom: 5px;
+}
+
+.banner-chef h3 {
+  font-weight: 400;
+  font-size: 20px;
+
+  color: #777777;
+
+  margin-bottom: 50px;
+}
+
+.ingredients-contain,
+.preparations-contain,
+.informations-contain {
+  padding: 15px 0px;
+}
+
+.ingredients-contain ul,
+.preparations-contain ul {
+  margin-left: 16px;
+}
+
+.ingredients-contain ul li,
+.preparations-contain ul li {
+  margin: 8px 0;
+}
+
+.ingredients-contain ul li,
+.preparations-contain ul li,
+.informations-contain p {
+  font-size: 18px;
+  line-height: 28px;
+}

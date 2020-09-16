@@ -145,5 +145,11 @@
       "information": ""
     }
   ],
-  "chefs": []
+  "chefs": [
+    {
+      "id": 1,
+      "name": "Arlan Biati",
+      "avatar_url": "http://github.com/ArlanBiati.png"
+    }
+  ]
 }

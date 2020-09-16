@@ -1,0 +1,127 @@
+header {
+    background-color: black;
+}
+
+header .logo {
+    margin-right: 5%;
+}
+
+header a {
+    font-weight: bold;
+    font-size: 15px;
+
+    color: #999999;
+}
+
+header a + a {
+    margin-left: 5%;
+}
+
+form div.header-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 55px 0 30px 0;
+}
+
+form div.header-form h1 {
+    font-size: 24px;
+    font-weight: 700;
+
+    color: #111111;
+}
+
+form div.header-form .buttons button{
+    font-size: 16px;
+    font-weight: 700;
+
+    color: #FFFFFF;
+
+    padding: 10px 25px;
+
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+form .buttons .save {
+    background-color: #6558C3;
+}
+
+form .input {
+    margin-bottom: 30px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+form .input label {
+    font-size: 16px;
+    font-weight: 700;
+
+    color: #111111;
+
+    margin-bottom: 10px;
+}
+
+form .input .add-ingredients label,
+form .input .add-preparations label {
+    margin: 0;
+}
+
+form .input input {
+    padding: 10px;
+    margin-bottom: 10px;
+
+    border-radius: 8px;
+    border: 1px solid #DDDDDD;
+
+    background-color: #FFFFFF;
+}
+
+.add-ingredients,
+.add-preparations {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+}
+
+form .input button {
+    font-size: 16px;
+    font-weight: 700;
+
+    background: none;
+    color: #6558C3;
+
+    border: 0;
+
+    cursor: pointer;
+
+    outline: none;
+
+    transition: all 400ms ease-in-out;
+}
+
+form .input button:focus-within{
+    padding: 10px;
+
+    border-radius: 20px 1px;
+    border-bottom: 1px solid #6558C3;
+}
+
+
+form .input textarea {
+    background-color: #FFFFFF;
+
+    border: 1px solid #DDDDDD;
+    border-radius: 8px;
+    
+    padding: 10px;
+
+    resize: vertical;
+}
+
