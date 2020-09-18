@@ -1,132 +1,72 @@
-const fs = require('fs')
-const data = require('../../../data.json')
+const Recipe = require('../../models/Recipe')
+const { date } = require('../../lib/utils')
 
 // Rotas Administrativas
 
-exports.index = function (req, res) {
-  return res.render('page-admin/recipes/listing', { recipes: data.recipes })
-}
+module.exports = {
+  index(req, res) {
+    Recipe.all(function (recipes) {
+      return res.render('page-admin/recipes/listing', { recipes })
+    })
+  },
+  create(req, res) {
+    return res.render('page-admin/recipes/create')
+  },
+  post(req, res) {
+    const keys = Object.keys(req.body)
 
-exports.create = function (req, res) {
-  return res.render('page-admin/recipes/create', { recipes: data.recipes.values })
-}
-
-exports.show = function (req, res) {
-  const { id } = req.params
-
-  const foundRecipe = data.recipes.find((recipe) => {
-    return recipe.id == id
-  })
-  if (!foundRecipe) {
-    return res.send('Receita não encontrada')
-  }
-
-  const recipe = {
-    ...foundRecipe,
-    ingredients: foundRecipe.ingredients.toString().split(','),
-    preparations: foundRecipe.preparations.toString().split(',')
-  }
-
-  return res.render('page-admin/recipes/detail', { recipe })
-}
-
-exports.edit = function (req, res) {
-  const { id } = req.params
-
-  const foundRecipe = data.recipes.find((recipe) => {
-    return recipe.id == id
-  })
-  if (!foundRecipe) {
-    return res.send('Receita não encontrada')
-  }
-
-  const recipe = {
-    ...foundRecipe,
-    ingredients: foundRecipe.ingredients.toString().split(','),
-    preparations: foundRecipe.preparations.toString().split(',')
-  }
-
-  return res.render("page-admin/recipes/edit", { recipe })
-}
-
-exports.post = function (req, res) {
-  const keys = Object.keys(req.body)
-
-  for (key of keys) {
-    if (req.body[key] == '') {
-      return res.send('Por favor, preencha todos os campos.')
-    }
-  }
-
-  let { image, title, ingredients, preparations, information } = req.body
-
-  const id = Number(data.recipes.length + 1)
-
-  data.recipes.push({
-    id,
-    image,
-    title,
-    ingredients,
-    preparations,
-    information,
-  })
-
-  fs.writeFile('data.json', JSON.stringify(data, null, 2), function (err) {
-    if (err) {
-      return res.send('Erro de escrita do arquivo')
-    }
-    return res.redirect('/admin/recipes')
-  })
-}
-
-exports.put = function (req, res) {
-
-  const { id } = req.body
-
-  let index = 0
-
-  const foundRecipe = data.recipes.find((recipe, foundIndex) => {
-    if (id == recipe.id) {
-      index = foundIndex
-      return true
-    }
-  })
-
-  if (!foundRecipe) {
-    return res.send("Receita não encontrada")
-  }
-
-  const recipe = {
-    ...foundRecipe,
-    ...req.body,
-    id: Number(id)
-  }
-
-  data.recipes[index] = recipe
-
-  fs.writeFile("data.json", JSON.stringify(data, null, 2), function (err) {
-    if (err) {
-      return res.send("Write file error")
+    for (key of keys) {
+      if (req.body[key] == '') {
+        return res.send('Por favor, preencha todos os campos.')
+      }
     }
 
-    return res.redirect(`/admin/recipes/${id}`)
-  })
-}
+    Recipe.create(req.body, function (recipe) {
+      return res.redirect(`/admin/recipes/${recipe.id}`)
+    })
+  },
+  show(req, res) {
+    Recipe.find(req.params.id, function (recipe) {
+      if (!recipe) {
+        return res.send('Receita não encontrada')
+      }
 
-exports.delete = function (req, res) {
-  const { id } = req.body
+      recipe.ingredients = recipe.ingredients.toString().split(',')
+      recipe.preparations = recipe.preparations.toString().split(',')
+      recipe.created_at = date(recipe.created_at).format
 
-  const filteredRecipes = data.recipes.filter(function (recipe) {
-    return recipe.id != id
-  })
+      return res.render('page-admin/recipes/detail', { recipe })
+    })
+  },
+  edit(req, res) {
+    Recipe.find(req.params.id, function (recipe) {
+      if (!recipe) {
+        return res.send('Receita não encontrada')
+      }
 
-  data.recipes = filteredRecipes
+      recipe.ingredients = recipe.ingredients.toString().split(',')
+      recipe.preparations = recipe.preparations.toString().split(',')
+      recipe.created_at = date(recipe.created_at).format
 
-  fs.writeFile("data.json", JSON.stringify(data, null, 2), function (err) {
-    if (err) {
-      return res.send("Write file error")
+      return res.render('page-admin/recipes/edit', { recipe })
+    })
+  },
+  put(req, res) {
+    const keys = Object.keys(req.body)
+
+    for (key of keys) {
+      if (req.body[key] == '') {
+        return res.send('Por favor, preencha todos os campos')
+      }
     }
 
-    return res.redirect('/admin/recipes')
-  })
+    Recipe.update(req.body, function () {
+      return res.redirect(`/admin/recipes/${req.body.id}`)
+    })
+  },
+  delete(req, res) {
+    Recipe.delete(req.body.id, function () {
+      return res.redirect('/admin/recipes')
+    })
+  }
 }
