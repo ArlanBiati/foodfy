@@ -79,6 +79,8 @@ form .input input {
     padding: 10px;
     margin-bottom: 10px;
 
+    color: #111111;
+
     border-radius: 8px;
     border: 1px solid #DDDDDD;
 
@@ -119,6 +121,8 @@ form .input button:focus-within{
 
 
 form .input textarea {
+    font-size: 14px;
+    line-height: 21px;
     background-color: #FFFFFF;
 
     border: 1px solid #DDDDDD;

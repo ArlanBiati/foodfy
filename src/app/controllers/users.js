@@ -1,9 +1,15 @@
 const data = require('../../../data.json')
+const Recipe = require('../../models/Recipe')
+const Chef = require('../../models/Chef')
 
 // Rotas Usuário
 
 exports.home = function (req, res) {
-  return res.render('page-client/home', { recipes: data.recipes })
+
+  Recipe.all(function (recipes) {
+    return res.render('page-client/home', { recipes })
+  })
+
 }
 
 exports.about = function (req, res) {
@@ -11,26 +17,25 @@ exports.about = function (req, res) {
 }
 
 exports.chefs = function (req, res) {
-  return res.render('page-client/chefs', { chefs: data.chefs })
+
+  Chef.all(function (chefs) {
+    return res.render('page-client/chefs', { chefs })
+  })
 }
 
 exports.recipes = function (req, res) {
 
-  const { id } = req.params
+  Recipe.find(req.params.id, function (recipe) {
+    if (!recipe) {
+      return res.send('Receita não encontrada')
+    }
 
-  const foundRecipe = data.recipes.find((recipe) => {
-    return recipe.id == id
+    recipe.ingredients = recipe.ingredients.toString().split(',')
+    recipe.preparations = recipe.preparations.toString().split(',')
+    recipe.created_at = date(recipe.created_at).format
+
+    return res.render('page-client/recipe', { recipe })
   })
 
-  if (!foundRecipe) {
-    return res.send("Receita não encontrada")
-  }
 
-  const recipe = {
-    ...foundRecipe,
-    ingredients: foundRecipe.ingredients.toString().split(','),
-    preparations: foundRecipe.preparations.toString().split(',')
-  }
-
-  return res.render('page-client/recipe', { recipe })
 }
