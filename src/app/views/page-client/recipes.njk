@@ -1,0 +1,27 @@
+{% extends "page-client/layout.njk" %}
+
+{% block head %}
+  <link rel="stylesheet" href="/page-client/recipes.css">
+{% endblock head %}
+
+{% block title %}
+  <title>Chefs - Foodfy</title>
+{% endblock %}}
+
+{% block content %}
+  <section class="recipes">
+    <div class="grid">
+
+      {% for recipe in recipes %}
+        <div class="recipe">
+          <a href="/recipe/{{recipe.id}}"><img src="{{ recipe.image }}" alt="{{ recipe.title }}"></a>
+          <h2>{{ recipe.title }}</h2>
+          <h4>por
+            {{ recipe.chef_name }}
+          </h4>
+        </div>
+      {% endfor %}
+
+    </div>
+  </section>
+{% endblock content %}

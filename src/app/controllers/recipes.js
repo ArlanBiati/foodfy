@@ -10,7 +10,11 @@ module.exports = {
     })
   },
   create(req, res) {
-    return res.render('page-admin/recipes/create')
+
+    Recipe.chefsSelectOptions(function (options) {
+
+      return res.render('page-admin/recipes/create', { chefOptions: options })
+    })
   },
   post(req, res) {
     const keys = Object.keys(req.body)
@@ -31,10 +35,6 @@ module.exports = {
         return res.send('Receita não encontrada')
       }
 
-      recipe.ingredients = recipe.ingredients.toString().split(',')
-      recipe.preparations = recipe.preparations.toString().split(',')
-      recipe.created_at = date(recipe.created_at).format
-
       return res.render('page-admin/recipes/detail', { recipe })
     })
   },
@@ -44,11 +44,10 @@ module.exports = {
         return res.send('Receita não encontrada')
       }
 
-      recipe.ingredients = recipe.ingredients.toString().split(',')
-      recipe.preparations = recipe.preparations.toString().split(',')
-      recipe.created_at = date(recipe.created_at).format
+      Recipe.chefsSelectOptions(function (options) {
 
-      return res.render('page-admin/recipes/edit', { recipe })
+        return res.render('page-admin/recipes/edit', { recipe, chefOptions: options })
+      })
     })
   },
   put(req, res) {

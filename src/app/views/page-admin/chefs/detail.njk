@@ -21,7 +21,7 @@
         <div class="banner-chef">
             <img src="{{chef.avatar_url}}" alt="{{chef.name}}">
             <h1>{{chef.name}}</h1>
-            <h3>{{chef.recipes_number}}</h3>
+            <h3>{{chef.total_recipes}}</h3>
         </div>
 
         <h2>Receitas</h2>
@@ -29,10 +29,13 @@
         <div class="grid">
             {% for recipe in recipes %}
                 <div class="recipe">
-                    <a href="/recipes/{{recipe.id}}"><img src="{{ recipe.image }}" alt="{{ recipe.title }}"></a>
-                    <h2>{{ recipe.title }}</h2>
-                    <h4>por
-                        {{ recipe.author }}</h4>
+                    <img src="{{recipe.image}}" alt="{{recipe.title}}">
+                    <div>
+                        <h2>{{recipe.title}}</h2>
+                        <h4>por
+                            {{recipe.chef_name}}</h4>
+                        <a href="/admin/recipes/{{recipe.id}}">Visualizar</a>
+                    </div>
                 </div>
             {% endfor %}
         </div>

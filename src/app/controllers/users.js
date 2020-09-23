@@ -1,6 +1,6 @@
-const data = require('../../../data.json')
 const Recipe = require('../../models/Recipe')
 const Chef = require('../../models/Chef')
+const { date } = require('../../lib/utils')
 
 // Rotas Usuário
 
@@ -25,17 +25,20 @@ exports.chefs = function (req, res) {
 
 exports.recipes = function (req, res) {
 
+  Recipe.all(function (recipes) {
+    return res.render('page-client/recipes', { recipes })
+  })
+}
+
+exports.recipe = function (req, res) {
+
   Recipe.find(req.params.id, function (recipe) {
     if (!recipe) {
       return res.send('Receita não encontrada')
     }
 
-    recipe.ingredients = recipe.ingredients.toString().split(',')
-    recipe.preparations = recipe.preparations.toString().split(',')
     recipe.created_at = date(recipe.created_at).format
 
     return res.render('page-client/recipe', { recipe })
   })
-
-
 }

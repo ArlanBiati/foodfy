@@ -28,10 +28,11 @@
 
             {% for recipe in recipes %}
                 <div class="recipe">
-                    <a href="/recipes/{{recipe.id}}"><img src="{{ recipe.image }}" alt="{{ recipe.title }}"></a>
+                    <a href="/recipe/{{recipe.id}}"><img src="{{ recipe.image }}" alt="{{ recipe.title }}"></a>
                     <h2>{{ recipe.title }}</h2>
                     <h4>por
-                        {{ recipe.author }}</h4>
+                        {{ recipe.chef_name }}
+                    </h4>
                 </div>
             {% endfor %}
 

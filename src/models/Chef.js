@@ -1,8 +1,15 @@
 const db = require('../config/db')
+const { date } = require('../lib/utils')
 
 module.exports = {
   all(callback) {
-    db.query(`SELECT * FROM chefs ORDER BY name ASC`, function (err, results) {
+    db.query(`
+      SELECT chefs.*, count(recipes) AS total_recipes
+      FROM chefs 
+      LEFT JOIN recipes ON (chefs.id = recipes.chef_id)
+      GROUP BY chefs.id
+      ORDER BY total_recipes DESC
+      `, function (err, results) {
       if (err) throw `Database error! ${err}`
 
       callback(results.rows)
@@ -22,7 +29,7 @@ module.exports = {
     const values = [
       data.name,
       data.avatar_url,
-      data(Date.now()).iso
+      date(Date.now()).iso
     ]
 
     db.query(query, values, function (err, results) {
@@ -33,7 +40,10 @@ module.exports = {
   },
 
   find(id, callback) {
-    db.query(`SELECT * FROM chefs WHERE id = $1`, [id], function (err, results) {
+    db.query(`
+      SELECT * FROM chefs
+      WHERE chefs.id = $1
+      `, [id], function (err, results) {
       if (err) throw `Database error! ${err}`
 
       callback(results.rows[0])

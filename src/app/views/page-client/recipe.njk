@@ -1,7 +1,7 @@
 {% extends "page-client/layout.njk" %}
 
 {% block head %}
-    <link rel="stylesheet" href="/page-client/recipes.css">
+    <link rel="stylesheet" href="/page-client/recipe.css">
 {% endblock head %}
 
 {% block title %}
@@ -13,7 +13,8 @@
         <div class="banner-recipe">
             <img src="{{recipe.image}}" alt="{{recipe.title}}">
             <h1>{{recipe.title}}</h1>
-            <h3>por {{recipe.author}}</h3>
+            <h3>por
+                {{recipe.author}}</h3>
         </div>
 
         <div class="ingredients">
@@ -24,7 +25,7 @@
             <div class="showHide ingredients-contain">
                 <ul>
                     {% for ingredient in recipe.ingredients %}
-                    <li>{{ingredient}}</li>
+                        <li>{{ingredient}}</li>
                     {% endfor %}
                 </ul>
             </div>
@@ -38,7 +39,7 @@
             <div class="showHide preparations-contain">
                 <ul>
                     {% for preparation in recipe.preparations %}
-                    <li>{{preparation}}</li>
+                        <li>{{preparation}}</li>
                     {% endfor %}
                 </ul>
             </div>
@@ -55,7 +56,6 @@
                 </p>
             </div>
         </div>
-
 
     </section>
 {% endblock %}

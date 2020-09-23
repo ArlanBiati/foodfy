@@ -75,3 +75,54 @@ header a + a {
 
   margin-bottom: 50px;
 }
+
+.chef h2 {
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.recipe {
+  display: flex;
+  align-items: center;
+}
+
+.recipe img {
+  width: 40%;
+  height: 60px;
+
+  border-radius: 9px;
+}
+
+.recipe div {
+  margin-left: 20px;
+}
+
+.recipe div h2 {
+  margin-bottom: 5px;
+
+  font-size: 18px;
+  font-weight: 400;
+
+  color: #111111;
+}
+
+.recipe div h4 {
+  margin-bottom: 10px;
+
+  font-size: 14px;
+  font-weight: 400;
+  
+  color: #777777;
+}
+
+.recipe div a {
+  font-size: 14px;
+  font-weight: 700;
+  
+  color: #6558C3;
+}

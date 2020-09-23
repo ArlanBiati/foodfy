@@ -162,3 +162,15 @@ form .input textarea {
     resize: vertical;
 }
 
+form .input select {
+    padding: 10px;
+    margin-top: 10px;
+
+    color: #111111;
+
+    border-radius: 8px;
+    border: 1px solid #DDDDDD;
+
+    background-color: #FFFFFF;
+}
+

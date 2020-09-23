@@ -1,4 +1,5 @@
 const Chef = require('../../models/Chef')
+const Recipe = require('../../models/Recipe')
 const { date } = require('../../lib/utils')
 
 // Rotas Administrativas
@@ -28,12 +29,16 @@ module.exports = {
   show(req, res) {
     Chef.find(req.params.id, function (chef) {
       if (!chef) {
-        return res.send('Receita não encontrada')
+        return res.send('Chef não encontrada')
       }
 
       chef.created_at = date(chef.created_at).format
 
-      return res.render('page-admin/chefs/detail', { chef })
+      Recipe.all(function (recipes) {
+
+        return res.render('page-admin/chefs/detail', { chef, recipes })
+      })
+
     })
   },
   edit(req, res) {
