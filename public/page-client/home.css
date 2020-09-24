@@ -1,6 +1,7 @@
 /* ========== banner ========= */
 
 section.banner {
+    
     background-color: #FBDFDB;
 
     display: flex;
@@ -11,10 +12,42 @@ section.banner {
     border-radius: 32px;
 
     height: 370px;
+
+    position: relative;
+
+    overflow: hidden;    
+}
+
+section.banner::after {
+    content: "";
+
+    width: 150%;
+    height: 300%;
+
+    border-radius: 40%;
+
+    left: -15%;
+    bottom: -50%;
+
+    position: absolute;
+
+    background-color: #fff;
+
+    animation: banner 6s forwards;
+}
+
+@keyframes banner {
+    from {
+        transform: translateX(0) translateY(0) rotate(0);
+    }
+    to {
+        transform: translateX(100%) translateY(-100%) rotate(300deg);
+    }
 }
 
 .description-banner {
     align-self: center;
+    z-index: 100;
 }
 
 .description-banner h1 {
@@ -32,6 +65,7 @@ section.banner {
 
 .img-banner {
     align-self: flex-end;
+    z-index: 100;
 }
 
 /* ========= recipes ======== */
@@ -39,6 +73,8 @@ section.banner {
 
 section.recipes {
     margin-top: 6%;
+    max-height: 350px;
+    overflow: hidden;
 }
 
 section.recipes h1 {

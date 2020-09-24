@@ -1,3 +1,14 @@
+const currentPage = location.pathname
+
+const menuItems = document.querySelectorAll('header .nav a')
+
+for (item of menuItems) {
+    if (currentPage.includes(item.getAttribute('href'))) {
+        item.classList.add('active')
+    }
+}
+
+
 // função botao mostrar / esconder conteudo receita
 
 const showHides = document.querySelectorAll(".button h4")

@@ -9,6 +9,10 @@ header .container{
 }
 
 .nav a {
+    color: #999999;
+}
+
+header .nav a.active {
     color: black;
 }
 
