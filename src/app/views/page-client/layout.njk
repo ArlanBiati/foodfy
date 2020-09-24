@@ -25,10 +25,12 @@
                         <a href="/chefs">Chefs</a>
                     </div>
 
-                    <div class="search">
-                        <input type="text" placeholder="Buscar uma receita">
-                        <button>Buscar</button>
-                    </div>
+                    <form action="/recipes/search" method="GET">
+                        <div class="search">
+                            <input type="text" name="filter" value="{{ filter }}" placeholder="Buscar uma receita">
+                            <button type="submit">Buscar</button>
+                        </div>
+                    </form>
                 </div>
 
             </header>

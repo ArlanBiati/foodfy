@@ -11,6 +11,7 @@ routes.get('/', users.home) // Mostrar home do usuario - Ok
 routes.get('/about', users.about) // Mostrar página de informações do site - Ok
 routes.get('/chefs', users.chefs) // Mostrar página de chefs - Ok
 routes.get('/recipes', users.recipes) // Exibir detalhes de uma receita - Ok
+routes.get('/recipes/search', users.search) // Exibir página de pesquisa de receitas- Ok
 routes.get('/recipe/:id', users.recipe) // Exibir detalhes de uma receita - Ok
 
 // ADMIM RECIPES

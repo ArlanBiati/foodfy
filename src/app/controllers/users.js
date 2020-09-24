@@ -3,42 +3,61 @@ const Chef = require('../../models/Chef')
 const { date } = require('../../lib/utils')
 
 // Rotas Usuário
+module.exports = {
 
-exports.home = function (req, res) {
+  home(req, res) {
 
-  Recipe.all(function (recipes) {
-    return res.render('page-client/home', { recipes })
-  })
+    Recipe.all(function (recipes) {
+      return res.render('page-client/home', { recipes })
+    })
+  },
 
-}
+  about(req, res) {
+    return res.render('page-client/about')
+  },
 
-exports.about = function (req, res) {
-  return res.render('page-client/about')
-}
+  chefs(req, res) {
 
-exports.chefs = function (req, res) {
+    Chef.all(function (chefs) {
+      return res.render('page-client/chefs', { chefs })
+    })
+  },
 
-  Chef.all(function (chefs) {
-    return res.render('page-client/chefs', { chefs })
-  })
-}
+  recipes(req, res) {
 
-exports.recipes = function (req, res) {
+    Recipe.all(function (recipes) {
+      return res.render('page-client/recipes', { recipes })
+    })
+  },
 
-  Recipe.all(function (recipes) {
-    return res.render('page-client/recipes', { recipes })
-  })
-}
+  search(req, res) {
 
-exports.recipe = function (req, res) {
+    const { filter } = req.query
 
-  Recipe.find(req.params.id, function (recipe) {
-    if (!recipe) {
-      return res.send('Receita não encontrada')
+    if (filter) {
+
+      Recipe.findBy(filter, function (recipes) {
+        return res.render('page-client/search', { recipes, filter })
+      })
+
+    } else {
+
+      Recipe.all(function (recipes) {
+        return res.render('page-client/search', { recipes })
+      })
     }
+  },
 
-    recipe.created_at = date(recipe.created_at).format
+  recipe(req, res) {
 
-    return res.render('page-client/recipe', { recipe })
-  })
+    Recipe.find(req.params.id, function (recipe) {
+      if (!recipe) {
+        return res.send('Receita não encontrada')
+      }
+
+      recipe.created_at = date(recipe.created_at).format
+
+      return res.render('page-client/recipe', { recipe })
+    })
+  }
 }
