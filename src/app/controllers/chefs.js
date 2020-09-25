@@ -1,8 +1,5 @@
 const Chef = require('../../models/Chef')
 const Recipe = require('../../models/Recipe')
-const { date } = require('../../lib/utils')
-
-// Rotas Administrativas
 
 module.exports = {
   index(req, res) {
@@ -10,9 +7,11 @@ module.exports = {
       return res.render('page-admin/chefs/listing', { chefs })
     })
   },
+
   create(req, res) {
     return res.render('page-admin/chefs/create')
   },
+
   post(req, res) {
     const keys = Object.keys(req.body)
 
@@ -26,21 +25,19 @@ module.exports = {
       return res.redirect(`/admin/chefs/${chef.id}`)
     })
   },
+
   show(req, res) {
     Chef.find(req.params.id, function (chef) {
       if (!chef) {
         return res.send('Chef não encontrada')
       }
 
-      chef.created_at = date(chef.created_at).format
-
-      Recipe.all(function (recipes) {
-
+      Recipe.showRecipes(req.params.id, function (recipes) {
         return res.render('page-admin/chefs/detail', { chef, recipes })
       })
-
     })
   },
+
   edit(req, res) {
     Chef.find(req.params.id, function (chef) {
       if (!chef) {
@@ -50,6 +47,7 @@ module.exports = {
       return res.render('page-admin/chefs/edit', { chef })
     })
   },
+
   put(req, res) {
     const keys = Object.keys(req.body)
 
@@ -63,6 +61,7 @@ module.exports = {
       return res.redirect(`/admin/chefs/${req.body.id}`)
     })
   },
+
   delete(req, res) {
     Chef.delete(req.body.id, function () {
       return res.redirect('/admin/chefs')

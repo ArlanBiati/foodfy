@@ -14,6 +14,7 @@ module.exports = {
       callback(results.rows)
     })
   },
+
   create(data, callback) {
     const query = `
       INSERT INTO recipes (
@@ -44,6 +45,7 @@ module.exports = {
       callback(results.rows[0])
     })
   },
+
   find(id, callback) {
     db.query(`
       SELECT recipes.*, chefs.name AS chef_name
@@ -56,6 +58,7 @@ module.exports = {
       callback(results.rows[0])
     })
   },
+
   findBy(filter, callback) {
     db.query(`
       SELECT recipes.*, chefs.name AS chef_name
@@ -68,6 +71,20 @@ module.exports = {
       callback(results.rows)
     })
   },
+
+  showRecipes(id, callback) {
+    db.query(`
+      SELECT image, title, chefs.name AS chef_name
+      FROM recipes
+      LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
+      WHERE recipes.chef_id = $1
+    `, [id], function (err, results) {
+      if (err) throw `Database error! ${err}`
+
+      callback(results.rows)
+    })
+  },
+
   update(data, callback) {
     const query = `
       UPDATE recipes SET
@@ -96,15 +113,24 @@ module.exports = {
       callback()
     })
   },
+
   delete(id, callback) {
-    db.query(`DELETE FROM recipes WHERE id = $1`, [id], function (err, results) {
+    db.query(`
+      DELETE 
+      FROM recipes 
+      WHERE id = $1
+      `, [id], function (err, results) {
       if (err) throw `Database error! ${err}`
 
       return callback()
     })
   },
+
   chefsSelectOptions(callback) {
-    db.query(`SELECT name, id FROM chefs`, function (err, results) {
+    db.query(`
+      SELECT name, id 
+      FROM chefs
+      `, function (err, results) {
       if (err) throw `Database error! ${err}`
 
       callback(results.rows)
