@@ -52,20 +52,19 @@ header a + a {
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-
+    gap: 40px;
 }
 
 .recipe {
     display: flex;
+    align-items: center;
 }
 
 .recipe img {
     width: 40%;
-    height: 60px;
+    height: 90px;
 
     border-radius: 9px;
-
-    margin-bottom: 20px;
 }
 
 .recipe div {

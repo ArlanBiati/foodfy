@@ -1,21 +1,17 @@
-const db = require('../config/db')
-const { date } = require('../lib/utils')
+const db = require('../../config/db')
+const { date } = require('../../lib/utils')
 
 module.exports = {
-  all(callback) {
-    db.query(`
+  all() {
+    return db.query(`
       SELECT recipes.*, chefs.name AS chef_name 
       FROM recipes 
       LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
       ORDER BY title ASC
-      `, function (err, results) {
-      if (err) throw `Database error! ${err}`
-
-      callback(results.rows)
-    })
+      `)
   },
 
-  create(data, callback) {
+  create(data) {
     const query = `
       INSERT INTO recipes (
         chef_id,
@@ -39,53 +35,37 @@ module.exports = {
       date(Date.now()).iso
     ]
 
-    db.query(query, values, function (err, results) {
-      if (err) throw `Database error! ${err}`
-
-      callback(results.rows[0])
-    })
+    return db.query(query, values)
   },
 
-  find(id, callback) {
-    db.query(`
+  find(id) {
+    return db.query(`
       SELECT recipes.*, chefs.name AS chef_name
       FROM recipes 
       LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
       WHERE recipes.id = $1
-      `, [id], function (err, results) {
-      if (err) throw `Database error! ${err}`
-
-      callback(results.rows[0])
-    })
+      `, [id])
   },
 
-  findBy(filter, callback) {
-    db.query(`
+  findBy(filter) {
+    return db.query(`
       SELECT recipes.*, chefs.name AS chef_name
       FROM recipes 
       LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
       WHERE recipes.title ILIKE '%${filter}%'
-      `, function (err, results) {
-      if (err) throw `Database error! ${err}`
-
-      callback(results.rows)
-    })
+      `)
   },
 
-  showRecipes(id, callback) {
-    db.query(`
+  showRecipes(id) {
+    return db.query(`
       SELECT image, title, chefs.name AS chef_name
       FROM recipes
       LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
       WHERE recipes.chef_id = $1
-    `, [id], function (err, results) {
-      if (err) throw `Database error! ${err}`
-
-      callback(results.rows)
-    })
+    `, [id])
   },
 
-  update(data, callback) {
+  update(data) {
     const query = `
       UPDATE recipes SET
         image=($1),
@@ -107,33 +87,21 @@ module.exports = {
       data.id
     ]
 
-    db.query(query, values, function (err, results) {
-      if (err) throw `Database error! ${err}`
-
-      callback()
-    })
+    return db.query(query, values)
   },
 
-  delete(id, callback) {
-    db.query(`
+  delete(id) {
+    return db.query(`
       DELETE 
       FROM recipes 
       WHERE id = $1
-      `, [id], function (err, results) {
-      if (err) throw `Database error! ${err}`
-
-      return callback()
-    })
+      `, [id])
   },
 
-  chefsSelectOptions(callback) {
-    db.query(`
+  chefsSelectOptions() {
+    return db.query(`
       SELECT name, id 
       FROM chefs
-      `, function (err, results) {
-      if (err) throw `Database error! ${err}`
-
-      callback(results.rows)
-    })
+      `)
   }
 }
