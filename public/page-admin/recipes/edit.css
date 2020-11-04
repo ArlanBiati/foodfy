@@ -21,6 +21,8 @@ header a + a {
     margin-left: 5%;
 }
 
+/* FORM */
+
 form {
     position: relative;
 }
@@ -174,11 +176,15 @@ form .input select {
     background-color: #FFFFFF;
 }
 
+/* PHOTOS */
+
 form .input .grid-photos {
     position: relative;
+
     display: grid;
-    grid-template-columns: 160px 1fr;
-    align-items: center;
+    grid-template-columns: 150px 1fr;
+
+    column-gap: 25px;
 }
 
 form .input #photos-upload {
@@ -186,8 +192,15 @@ form .input #photos-upload {
 
     display: block;
     overflow: hidden;
+}
 
-    width: 180px;
+form .input #photos-upload img {
+    width: 30px;
+    height: 30px;
+
+    position: absolute;
+
+    transform: translate(200%, 200%);
 }
 
 form .input #photos-upload div {
@@ -223,8 +236,8 @@ form .input #photos-input {
 
 form .input #photos-preview {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
+    grid-template-columns: repeat(4, 150px);
+    justify-content: space-between;
   
     width: 100%;
 }
